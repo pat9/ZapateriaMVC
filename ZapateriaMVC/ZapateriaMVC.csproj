@@ -179,10 +179,17 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ZapatosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Usuarios.cs" />
+    <Compile Include="Models\ZapatoColor.cs" />
+    <Compile Include="Models\ZapatoColorDAL.cs" />
+    <Compile Include="Models\Zapatos.cs" />
+    <Compile Include="Models\ZapatosDAL.cs" />
+    <Compile Include="Models\ZapatoTalla.cs" />
+    <Compile Include="Models\ZapatoTallaDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -201,6 +208,10 @@
     <Content Include="css_admin\adminlte.min.css.map" />
     <Content Include="Views\Share\MasterAdmin.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Zapatos\Index.cshtml" />
+    <Content Include="Views\Zapatos\Create.cshtml" />
+    <Content Include="Views\Zapatos\Edit.cshtml" />
+    <Content Include="Views\Zapatos\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
