@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -8,10 +7,11 @@ using ZapateriaMVC.Models;
 
 namespace ZapateriaMVC.Controllers
 {
-    public class ZapatosController : Controller
+    public class UsuariosController : Controller
     {
-        ZapatosDAL ZapatosDAL = new ZapatosDAL();
-        // GET: Zapatos
+
+        UsuariosDAL UsersDAL = new UsuariosDAL();
+        // GET: Usuarios
         public ActionResult Index()
         {
             if (Session["Usuario"] == null)
@@ -19,11 +19,10 @@ namespace ZapateriaMVC.Controllers
                 return Redirect("/Admin/Login");
             }
             ViewBag.Usuario = (Usuarios)Session["Usuario"];
-            List<Zapatos> ZapatosList = new List<Zapatos>(ZapatosDAL.ListarZapatos());
-            return View(ZapatosList);
+            return View(UsersDAL.ListarZapatos());
         }
 
-        // GET: Zapatos/Details/5
+        // GET: Usuarios/Details/5
         public ActionResult Details(int id)
         {
             if (Session["Usuario"] == null)
@@ -34,7 +33,7 @@ namespace ZapateriaMVC.Controllers
             return View();
         }
 
-        // GET: Zapatos/Create
+        // GET: Usuarios/Create
         public ActionResult Create()
         {
             if (Session["Usuario"] == null)
@@ -45,25 +44,14 @@ namespace ZapateriaMVC.Controllers
             return View();
         }
 
-        // POST: Zapatos/Create
+        // POST: Usuarios/Create
         [HttpPost]
-        public ActionResult Create(Zapatos Zapato, HttpPostedFileBase fotozapato, string[] zapatocolor , string[] talla)
+        public ActionResult Create(Usuarios Usuario)
         {
-
             try
             {
                 // TODO: Add insert logic here
-                if (fotozapato != null)
-                {
-                    using (var binaryReader = new BinaryReader(Request.Files[0].InputStream))
-                    {
-                        Zapato.Foto = binaryReader.ReadBytes(Request.Files[0].ContentLength);
-                    }
-
-                }
-
-                ZapatosDAL.AgregarZapatos(Zapato, zapatocolor,talla);
-
+                UsersDAL.AgregarUsuario(Usuario);
                 return RedirectToAction("Index");
             }
             catch
@@ -72,7 +60,7 @@ namespace ZapateriaMVC.Controllers
             }
         }
 
-        // GET: Zapatos/Edit/5
+        // GET: Usuarios/Edit/5
         public ActionResult Edit(int id)
         {
             if (Session["Usuario"] == null)
@@ -80,39 +68,27 @@ namespace ZapateriaMVC.Controllers
                 return Redirect("/Admin/Login");
             }
             ViewBag.Usuario = (Usuarios)Session["Usuario"];
-            return View(ZapatosDAL.ObtenerDatosZapato(id));
+            return View(UsersDAL.ObtenerDatosUsuario(id));
         }
 
-        // POST: Zapatos/Edit/5
+        // POST: Usuarios/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, Zapatos Zapato,HttpPostedFileBase fotozapato, string[] zapatocolor, string[] talla)
+        public ActionResult Edit(int id, Usuarios Usuario)
         {
             try
             {
                 // TODO: Add update logic here
-                var Zapato1 = ZapatosDAL.ObtenerDatosZapato(id);
-                if(Zapato.Foto == null)
-                {
-                    Zapato.Foto = Zapato1.Foto;
-                }
-                if (fotozapato != null)
-                {
-                    using (var binaryReader = new BinaryReader(Request.Files[0].InputStream))
-                    {
-                        Zapato.Foto = binaryReader.ReadBytes(Request.Files[0].ContentLength);
-                    }
-
-                }
-                ZapatosDAL.ModificarZapato(Zapato, zapatocolor, talla);
+                Usuario.Id = id;
+                UsersDAL.ModificarUsuario(Usuario);
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View(ZapatosDAL.ObtenerDatosZapato(id));
+                return View();
             }
         }
 
-        // GET: Zapatos/Delete/5
+        // GET: Usuarios/Delete/5
         public ActionResult Delete(int id)
         {
             if (Session["Usuario"] == null)
@@ -120,17 +96,18 @@ namespace ZapateriaMVC.Controllers
                 return Redirect("/Admin/Login");
             }
             ViewBag.Usuario = (Usuarios)Session["Usuario"];
-            return View(ZapatosDAL.ObtenerDatosZapato(id));
+            return View(UsersDAL.ObtenerDatosUsuario(id));
         }
 
-        // POST: Zapatos/Delete/5
+        // POST: Usuarios/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, Usuarios Usuario)
         {
             try
             {
                 // TODO: Add delete logic here
-                ZapatosDAL.BorrarZapato(id);
+                Usuario.Id = id;
+                UsersDAL.ModificarUsuario(Usuario);
                 return RedirectToAction("Index");
             }
             catch

@@ -9,6 +9,8 @@ create table usuarios(
 
 )
 
+insert into usuarios values('pat','1234', 'Daniel Pat');
+
 create table zapatos(
 	id int identity primary key,
 	nombre varchar(250),

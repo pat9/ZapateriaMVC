@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Zapatos UTM| Dashboard</title>
+    <title>Zapatos del Sur Yucatán | @ViewBag.Title</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -45,26 +45,26 @@
 
         <header class="main-header">
             <!-- Logo -->
-            <a href="index2.html" class="logo">
+            <a href="/Admin/" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><b>Z</b>UTM</span>
+                <span class="logo-mini"><b>ZS</b>YUC</span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>Zapatos</b>UTM</span>
+                <span class="logo-lg"><b>Zapateria del sur</b>Yucatán</span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top">
                 <!-- Sidebar toggle button-->
                 <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                    <span class="sr-only">Toggle navigation</span>
+                    <span class="sr-only">Menú</span>
                 </a>
 
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
-                            <a href="#">
-                                <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                                <span class="hidden-xs">Alexander Pierce</span>
+                            <a>
+
+                                <span class="hidden-xs">@((ViewBag.Usuario as ZapateriaMVC.Models.Usuarios).Nombre)</span>
                             </a>
                             
                         </li>
@@ -79,10 +79,10 @@
                 <!-- Sidebar user panel -->
                 <div class="user-panel">
                     <div class="pull-left image">
-                        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="https://i.pinimg.com/originals/84/82/4e/84824ec2eb0a4c8ec9a9dc02c2abfed1.jpg" alt="Imagen de perfil" />   
                     </div>
                     <div class="pull-left info">
-                        <p>Alexander Pierce</p>
+                        <p>@((ViewBag.Usuario as ZapateriaMVC.Models.Usuarios).Nombre)</p>
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                     </div>
                 </div>
