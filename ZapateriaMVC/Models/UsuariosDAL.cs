@@ -9,7 +9,7 @@ namespace ZapateriaMVC.Models
 {
     public class UsuariosDAL
     {
-        string connectionString = "Data Source=DESKTOP-GOR5NCI;Initial Catalog=Zapateria;Integrated Security = True";
+        string connectionString = "Data Source=den1.mssql7.gear.host; Initial Catalog=zapateria;User Id=zapateria;Password=Uh4KI~h~1iNL;";
         //To View all employees details
         public IEnumerable<Usuarios> ListarZapatos()
         {
@@ -25,7 +25,7 @@ namespace ZapateriaMVC.Models
                     Usuarios Usuario = new Usuarios();
                     Usuario.Id = Convert.ToInt32(rdr["id"]);
                     Usuario.Usuario = rdr["usuario"].ToString();
-                    Usuario.Password = rdr["password"].ToString();
+                    Usuario.Password = rdr["pass"].ToString();
                     Usuario.Nombre = rdr["nombre"].ToString();
                     ListaEmpleados.Add(Usuario);
                 }

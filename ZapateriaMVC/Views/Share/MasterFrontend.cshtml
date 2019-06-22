@@ -5,11 +5,13 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="es-mx">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Zapateria Develoteca</title>
+    <meta name="description" content="Zapateria del sur Yucatán te ofrece los mejores zapatos al mejor precio" />
+    <meta name="keywords"  content="zapatos yucatan sur zapateria hombre mujer"/>
+    <title>Zapateria del Sur Yucatán</title>
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rokkitt:100,300,400,700" rel="stylesheet">
@@ -44,17 +46,17 @@
 <body>
     <div class="colorlib-loader"></div>
     <div id="page">
-        <nav class="colorlib-nav" role="navigation">
+        <nav class="colorlib-nav">
             <div class="top-menu">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-7 col-md-9">
-                            <div id="colorlib-logo"><a href="index.html">Footwear</a></div>
+                            <div id="colorlib-logo"><a href="index.html">Zapateria del Sur Yucatán</a></div>
                         </div>
                         <div class="col-sm-5 col-md-3">
                             <form action="#" class="search-wrap">
                                 <div class="form-group">
-                                    <input type="search" class="form-control search" placeholder="Search">
+                                    <input type="search" class="form-control search" placeholder="Buscador">
                                     <button class="btn btn-primary submit-search text-center" type="submit"><i class="icon-search"></i></button>
                                 </div>
                             </form>
@@ -63,21 +65,13 @@
                     <div class="row">
                         <div class="col-sm-12 text-left menu-1">
                             <ul>
-                                <li class="active"><a href="index.html">Home</a></li>
-                                <li class="has-dropdown">
-                                    <a href="men.html">Men</a>
-                                    <ul class="dropdown">
-                                        <li><a href="product-detail.html">Product Detail</a></li>
-                                        <li><a href="cart.html">Shopping Cart</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                        <li><a href="order-complete.html">Order Complete</a></li>
-                                        <li><a href="add-to-wishlist.html">Wishlist</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="women.html">Women</a></li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                                <li class="cart"><a href="cart.html"><i class="icon-shopping-cart"></i> Cart [0]</a></li>
+                                <li class="@ViewBag.Inicio"><a href="index.html">Inicio</a></li>
+                                <li class="@ViewBag.Hombres"><a href="men.html">Hombres</a></li>
+                                <li class="@ViewBag.Mujeres"><a href="women.html">Mujeres</a></li>
+                                <li class="@ViewBag.Mision"><a href="about.html">Mision</a></li>
+                                <li class="@ViewBag.Vision"><a href="contact.html">Vision</a></li>
+                                <li class="@ViewBag.SobreNosotros"><a href="contact.html">Sobre Nosotros</a></li>
+                                <li class="cart"><a href="#"><i class="icon-shopping-cart"></i> Carrito [0]</a></li>
                             </ul>
                         </div>
                     </div>
@@ -91,12 +85,12 @@
                                 <div class="owl-carousel2">
                                     <div class="item">
                                         <div class="col">
-                                            <h3><a href="#">25% off (Almost) Everything! Use Code: Summer Sale</a></h3>
+                                            <h3><a href="#">25% de descuento al usar el codigo:UTM Shoes</a></h3>
                                         </div>
                                     </div>
                                     <div class="item">
                                         <div class="col">
-                                            <h3><a href="#">Our biggest sale yet 50% off all summer shoes</a></h3>
+                                            <h3><a href="#">Por apertura 20% en toda tu compra</a></h3>
                                         </div>
                                     </div>
                                 </div>
@@ -107,12 +101,12 @@
             </div>
         </nav>
         @RenderBody();
-        <footer id="colorlib-footer" role="contentinfo">
+        <footer id="colorlib-footer">
             <div class="container">
                 <div class="row row-pb-md">
                     <div class="col footer-col colorlib-widget">
-                        <h4>About Footwear</h4>
-                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
+                        <h4>Sobre nosotros</h4>
+                        <p>Somos la primera zapateria yucateca que hace ventas totalmente online, con tiempos de entraga express</p>
                         <p>
                             <ul class="colorlib-social-icons">
                                 <li><a href="#"><i class="icon-twitter"></i></a></li>
@@ -123,48 +117,32 @@
                         </p>
                     </div>
                     <div class="col footer-col colorlib-widget">
-                        <h4>Customer Care</h4>
+                        <h4>Información</h4>
                         <p>
                             <ul class="colorlib-footer-links">
-                                <li><a href="#">Contact</a></li>
-                                <li><a href="#">Returns/Exchange</a></li>
-                                <li><a href="#">Gift Voucher</a></li>
-                                <li><a href="#">Wishlist</a></li>
-                                <li><a href="#">Special</a></li>
-                                <li><a href="#">Customer Services</a></li>
-                                <li><a href="#">Site maps</a></li>
+                                <li><a href="#">Sobre Nosotros</a></li>
+                                <li><a href="#">Misión</a></li>
+                                <li><a href="#">Visión</a></li>
                             </ul>
                         </p>
                     </div>
                     <div class="col footer-col colorlib-widget">
-                        <h4>Information</h4>
+                        <h4>Departamentos</h4>
                         <p>
                             <ul class="colorlib-footer-links">
-                                <li><a href="#">About us</a></li>
-                                <li><a href="#">Delivery Information</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Support</a></li>
-                                <li><a href="#">Order Tracking</a></li>
+                                <li><a href="#">Hombres</a></li>
+                                <li><a href="#">Mujeres</a></li>
                             </ul>
                         </p>
                     </div>
 
                     <div class="col footer-col">
-                        <h4>News</h4>
+                        <h4>Información de contacto</h4>
                         <ul class="colorlib-footer-links">
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="#">Press</a></li>
-                            <li><a href="#">Exhibitions</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col footer-col">
-                        <h4>Contact Information</h4>
-                        <ul class="colorlib-footer-links">
-                            <li>291 South 21th Street, <br> Suite 721 New York NY 10016</li>
-                            <li><a href="tel://1234567920">+ 1235 2355 98</a></li>
-                            <li><a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
-                            <li><a href="#">yoursite.com</a></li>
+                            <li>Calle 60, <br> No.489 Mérida Yuc. 97000</li>
+                            <li><a href="tel://1234567920">+ 9991589878</a></li>
+                            <li><a href="mailto:info@yoursite.com">info@zapateriasur.com</a></li>
+                            <li><a href="#">zapateriasur.com</a></li>
                         </ul>
                     </div>
                 </div>
@@ -176,10 +154,9 @@
                             <span>
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                 Copyright &copy;
-                                <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                <script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Este sitio fue hecho con <i class="icon-heart" aria-hidden="true"></i> por <a href="#"> el equipo gamematch</a>
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             </span>
-                            <span class="block">Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a> , <a href="http://pexels.com/" target="_blank">Pexels.com</a></span>
                         </p>
                     </div>
                 </div>

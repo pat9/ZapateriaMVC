@@ -9,7 +9,7 @@ namespace ZapateriaMVC.Models
 {
     public class ZapatosDAL
     {
-        string connectionString = "Data Source=DESKTOP-GOR5NCI;Initial Catalog=Zapateria;Integrated Security = True";
+        string connectionString = "Data Source=den1.mssql7.gear.host; Initial Catalog=zapateria;User Id=zapateria;Password=Uh4KI~h~1iNL;";
         //To View all employees details
         public IEnumerable<Zapatos> ListarZapatos()
         {
@@ -35,6 +35,34 @@ namespace ZapateriaMVC.Models
                 con.Close();
             }
             return ListaEmpleados;
+
+        }
+
+        public IEnumerable<Zapatos> ListarZapatos(int categoria)
+        {
+            List<Zapatos> ListaEmpleados = new List<Zapatos>();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("SELECT * FROM zapatos WHERE categoria="+categoria, con);
+                cmd.CommandType = CommandType.Text;
+                con.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    Zapatos Zapato = new Zapatos();
+                    Zapato.Id = Convert.ToInt32(rdr["id"]);
+                    Zapato.Nombre = rdr["nombre"].ToString();
+                    Zapato.Descripcion = rdr["descripcion"].ToString();
+                    Zapato.Precio = Convert.ToDouble(rdr["precio"]);
+                    Zapato.Foto = (byte[])rdr["foto"];
+                    Zapato.Categoria = (int)rdr["categoria"];
+                    Zapato.Stock = (int)rdr["stock"];
+                    ListaEmpleados.Add(Zapato);
+                }
+                con.Close();
+            }
+            return ListaEmpleados;
+
         }
 
         public void AgregarZapatos(Zapatos Zapato, string[] Colores, string[] Tallas)

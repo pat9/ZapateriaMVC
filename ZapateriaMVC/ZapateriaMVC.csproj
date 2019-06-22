@@ -178,6 +178,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Controllers\ZapatosController.cs" />
@@ -205,7 +206,7 @@
     <Content Include="css\.DS_Store" />
     <Content Include="css\style.css.map" />
     <Content Include="Views\Home\Categoria.cshtml" />
-    <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\Home\Zapato.cshtml" />
     <Content Include="css_admin\adminlte.css.map" />
     <Content Include="css_admin\adminlte.min.css.map" />
     <Content Include="Views\Share\MasterAdmin.cshtml" />
@@ -219,6 +220,7 @@
     <Content Include="Views\Usuarios\Edit.cshtml" />
     <Content Include="Views\Usuarios\Delete.cshtml" />
     <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

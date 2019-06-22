@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ZapateriaMVC.Models;
 
 namespace ZapateriaMVC.Controllers
 {
     public class HomeController : Controller
     {
+        ZapatosDAL ZapatosDAL = new ZapatosDAL();
         // GET: Home
         public ActionResult Index()
         {
@@ -16,13 +18,39 @@ namespace ZapateriaMVC.Controllers
 
         public ActionResult Categoria(int id)
         {
-            return View();
+            if(id >=1 && id <= 2)
+            {
+                ViewBag.Categoria = id;
+                return View(ZapatosDAL.ListarZapatos(id));
+            }
+            else
+            {
+                return new HttpStatusCodeResult(404);
+            }
+
         }
 
         // GET: Home/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Zapato(int id)
         {
-            return View();
+            try
+            {
+                var Zapat = ZapatosDAL.ObtenerDatosZapato(id);
+                if(Zapat.Id > 0)
+                {
+                    return View(Zapat);
+
+                }
+                else
+                {
+                    return new HttpStatusCodeResult(404);
+                }
+
+            }
+            catch
+            {
+                return new HttpStatusCodeResult(404);
+            }
         }
 
        

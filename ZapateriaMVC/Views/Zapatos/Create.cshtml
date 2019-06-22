@@ -1,11 +1,21 @@
 ﻿@model ZapateriaMVC.Models.Zapatos
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Crear";
     Layout = "~/Views/Share/MasterAdmin.cshtml";
 }
+<section class="content-header">
+    <h1>
+        Zapatos
+        <small>Panel de control</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Admin</a></li>
+        <li class="active">Zapatos</li>
+    </ol>
+</section>
 
-<h2>Create</h2>
+<h2>Crear</h2>
 
 @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" })) 
 {
@@ -71,7 +81,7 @@
         </div>
 
         <div class="form-group">
-            <label class="control-label col-md-2">Colores</label>
+            <label class="control-label col-md-2">Tallas</label>
             <div id="talla">
                 <div class="col-md-1">
                     <input type="number" name="talla" class="form-control" />
@@ -92,14 +102,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Crear" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Volver a la lista", "Index")
 </div>
 
 @section Scripts{

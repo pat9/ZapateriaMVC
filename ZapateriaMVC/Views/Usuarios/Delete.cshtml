@@ -1,13 +1,23 @@
 ﻿@model ZapateriaMVC.Models.Usuarios
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Eliminar";
     Layout = "~/Views/Share/MasterAdmin.cshtml";
 }
+<section class="content-header">
+    <h1>
+        Usuarios
+        <small>Panel de control</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Admin</a></li>
+        <li class="active">Usuarios</li>
+    </ol>
+</section>
 
-<h2>Delete</h2>
+<h2>Eliminar</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>¿Estas seguro de eliminar esto?</h3>
 <div>
     <h4>Usuarios</h4>
     <hr />
@@ -42,8 +52,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver a la lista", "Index")
         </div>
     }
 </div>

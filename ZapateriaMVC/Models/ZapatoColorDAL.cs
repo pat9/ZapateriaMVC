@@ -9,7 +9,7 @@ namespace ZapateriaMVC.Models
 {
     public class ZapatoColorDAL
     {
-        string connectionString = "Data Source=DESKTOP-GOR5NCI;Initial Catalog=Zapateria;Integrated Security = True";
+        string connectionString = "Data Source=den1.mssql7.gear.host; Initial Catalog=zapateria;User Id=zapateria;Password=Uh4KI~h~1iNL;";
         public IEnumerable<ZapatoColor> ListarColores(int id)
         {
             List<ZapatoColor> ListaColores = new List<ZapatoColor>();

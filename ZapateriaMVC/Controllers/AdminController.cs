@@ -49,5 +49,19 @@ namespace ZapateriaMVC.Controllers
 
             }
         }
+
+        public ActionResult Logout(string usuario, string password)
+        {
+            if (Session["Usuario"] == null)
+            {
+                return Redirect("/Admin/Login");
+            }
+            else
+            {
+                Session["Usuario"] = null;
+                return Redirect("/Admin/Login");
+            }
+            
+        }
     }
 }

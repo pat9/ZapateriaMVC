@@ -1,0 +1,84 @@
+﻿@model ZapateriaMVC.Models.Zapatos
+@{
+    ViewBag.Title = Model.Nombre + " | ZSY";
+    Layout = "~/Views/Share/MasterFrontend.cshtml";
+}
+
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p class="bread"><span><a href="/">Incio</a></span> / <span>@Model.Nombre</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="colorlib-product">
+    <div class="container">
+        <div class="row row-pb-lg product-detail-wrap">
+            <div class="col-sm-8">
+                <a href="#" class="prod-img">
+                    <img width="500" src="data:image/png;base64, @Convert.ToBase64String(Model.Foto)" class="img-fluid" alt="@Model.Nombre">
+                </a>
+            </div>
+            <div class="col-sm-4">
+                <div class="product-desc">
+                    <h3>@Model.Nombre</h3>
+                    <p class="price">
+                        <span>$@Model.Precio.ToString("###.00")</span>
+                    </p>
+                    <p>@Model.Descripcion</p>
+                    <div class="size-wrap">
+                        <div class="block-26 mb-2">
+                            <h4>Tallas</h4>
+                            <ul>
+                                @{
+                                    ZapateriaMVC.Models.ZapatoTallaDAL TallasZ = new ZapateriaMVC.Models.ZapatoTallaDAL();
+                                    var Tallas = TallasZ.ListarTalla(Model.Id);
+                                    foreach (var item in Tallas)
+                                    {
+                                        <li><a href="#">@item.Talla</a></li>
+                                    }
+                                }
+                            </ul>
+                        </div>
+                        <div class="block-26 mb-4">
+                            <h4>Color</h4>
+                            <ul>
+                                @{
+                                    ZapateriaMVC.Models.ZapatoColorDAL ColorZ = new ZapateriaMVC.Models.ZapatoColorDAL();
+                                    var Colores = ColorZ.ListarColores(Model.Id);
+                                    foreach (var item in Colores)
+                                    {
+                                        <li style="background:@item.Color"><a href="#">&nbsp;&nbsp;</a></li>
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="input-group mb-4">
+                        <span class="input-group-btn">
+                            <button type="button" class="quantity-left-minus btn" data-type="minus" data-field="quantity">
+                                <i class="icon-minus2"></i>
+                            </button>
+                        </span>
+                        <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
+                        <span class="input-group-btn ml-1">
+                            <button type="button" class="quantity-right-plus btn" data-type="plus" data-field="quantity">
+                                <i class="icon-plus2"></i>
+                            </button>
+                        </span>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <p class="addtocart"><a href="#" class="btn btn-primary btn-addtocart"><i class="icon-shopping-cart"></i>Agregar al carrito</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
