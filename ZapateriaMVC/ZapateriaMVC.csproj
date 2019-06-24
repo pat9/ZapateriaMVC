@@ -173,6 +173,7 @@
     <Content Include="js_admin\adminlte.js" />
     <Content Include="js_admin\adminlte.min.js" />
     <Content Include="js_admin\demo.js" />
+    <Content Include="robots.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -223,6 +224,10 @@
     <Content Include="Views\Error\NotFound.cshtml" />
     <None Include="Properties\PublishProfiles\zapateriayucatan - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\zapateriayucatan - Web Deploy.pubxml" />
+    <Content Include="Views\Home\Mision.cshtml" />
+    <Content Include="Views\Home\Vision.cshtml" />
+    <Content Include="Views\Home\Contacto.cshtml" />
+    <Content Include="Views\Home\Quienes.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -16,6 +16,26 @@ namespace ZapateriaMVC.Controllers
             return View();
         }
 
+        public ActionResult Mision()
+        {
+            return View();
+        }
+
+        public ActionResult Vision()
+        {
+            return View();
+        }
+
+        public ActionResult Contacto()
+        {
+            return View();
+        }
+
+        public ActionResult Quienes()
+        {
+            return View();
+        }
+
         public ActionResult Categoria(int id)
         {
             if(id >=1 && id <= 2)
