@@ -16,7 +16,15 @@
 
     <title>Zapateria del Sur Yucatán</title>
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142638498-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
+      gtag('config', 'UA-142638498-1');
+    </script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rokkitt:100,300,400,700" rel="stylesheet">
 
@@ -55,7 +63,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-7 col-md-9">
-                            <div id="colorlib-logo"><a href="index.html">Zapateria del Sur Yucatán</a></div>
+                            <div id="colorlib-logo"><a href="/">Zapateria del Sur Yucatán</a></div>
                         </div>
                         <div class="col-sm-5 col-md-3">
                             <form action="#" class="search-wrap">
@@ -69,13 +77,13 @@
                     <div class="row">
                         <div class="col-sm-12 text-left menu-1">
                             <ul>
-                                <li class="@ViewBag.Inicio"><a href="index.html">Inicio</a></li>
-                                <li class="@ViewBag.Hombres"><a href="men.html">Hombres</a></li>
-                                <li class="@ViewBag.Mujeres"><a href="women.html">Mujeres</a></li>
-                                <li class="@ViewBag.Mision"><a href="about.html">Mision</a></li>
-                                <li class="@ViewBag.Vision"><a href="contact.html">Vision</a></li>
-                                <li class="@ViewBag.Contacto"><a href="contact.html">Contacto</a></li>
-                                <li class="@ViewBag.Quienes"><a href="contact.html">¿Quiénes somos?</a></li>
+                                <li class="@ViewBag.Inicio"><a href="/">Inicio</a></li>
+                                <li class="@ViewBag.Hombres"><a href="/Home/Categoria/1">Hombres</a></li>
+                                <li class="@ViewBag.Mujeres"><a href="/Home/Categoria/2">Mujeres</a></li>
+                                <li class="@ViewBag.Mision"><a href="/Home/Mision">Mision</a></li>
+                                <li class="@ViewBag.Vision"><a href="/Home/Vision">Vision</a></li>
+                                <li class="@ViewBag.Contacto"><a href="/Home/Contacto">Contacto</a></li>
+                                <li class="@ViewBag.Quienes"><a href="/Home/Quienes">¿Quiénes somos?</a></li>
                          
                             </ul>
                         </div>
@@ -118,16 +126,16 @@
                         <h4>Información</h4>
 
                             <ul class="colorlib-footer-links">
-                                <li><a href="#">Sobre Nosotros</a></li>
-                                <li><a href="#">Misión</a></li>
-                                <li><a href="#">Visión</a></li>
+                                <li><a href="/Home/Quienes">Sobre Nosotros</a></li>
+                                <li><a href="/Home/Mision">Misión</a></li>
+                                <li><a href="/Home/Vision">Visión</a></li>
                             </ul>
                     </div>
                     <div class="col footer-col colorlib-widget">
                         <h4>Departamentos</h4>
                             <ul class="colorlib-footer-links">
-                                <li><a href="#">Hombres</a></li>
-                                <li><a href="#">Mujeres</a></li>
+                                <li><a href="/Home/Categoria/1">Hombres</a></li>
+                                <li><a href="/Home/Categoria/2">Mujeres</a></li>
                             </ul>
                     </div>
 
@@ -162,15 +170,7 @@
     <div class="gototop js-top">
         <a href="#" class="js-gotop"><i class="ion-ios-arrow-up"></i></a>
     </div>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142638498-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-142638498-1');
-    </script>
+   
 
     <!-- jQuery -->
     <script src="~/js/jquery.min.js"></script>
