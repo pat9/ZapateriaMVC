@@ -9,7 +9,7 @@ namespace ZapateriaMVC.Models
 {
     public class UsuariosDAL
     {
-        string connectionString = "Data Source=den1.mssql7.gear.host; Initial Catalog=zapateria;User Id=zapateria;Password=Uh4KI~h~1iNL;";
+        string connectionString = "Data Source=den1.mssql7.gear.host; Initial Catalog=Zapateria;User Id=zapateria;Password=Uh4KI~h~1iNL;";
         //To View all employees details
         public IEnumerable<Usuarios> ListarZapatos()
         {
