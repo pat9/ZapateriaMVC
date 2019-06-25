@@ -9,7 +9,7 @@ namespace ZapateriaMVC.Models
 {
     public class ZapatoTallaDAL
     {
-        string connectionString = "Data Source=den1.mssql7.gear.host; Initial Catalog=zapateria;User Id=zapateria;Password=Uh4KI~h~1iNL;";
+        string connectionString = "Data Source=den1.mssql7.gear.host;  Initial Catalog=Zapateria;User Id=zapateria;Password=Uh4KI~h~1iNL;";
         public IEnumerable<ZapatoTalla> ListarTalla(int id)
         {
             List<ZapatoTalla> ListaTalla = new List<ZapatoTalla>();
