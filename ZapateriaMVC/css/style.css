@@ -8330,9 +8330,10 @@ h1, h2, h3, h4, h5,
       color: #000; }
 
 .contact-wrap {
-  padding: 2em;
-  background: whitesmoke;
-  height: 100%; }
+    padding: 2em;
+    background: #dedede;
+    height: 100%;
+}
 
 .contact-form label {
   font-weight: 400; }
