@@ -241,7 +241,9 @@
     <Content Include="Views\Usuarios\Delete.cshtml" />
     <Content Include="Views\Admin\Login.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
+    <None Include="Properties\PublishProfiles\ZapateriaYucatan - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\zapateriayucatan - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\ZapateriaYucatan - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\zapateriayucatan - Web Deploy.pubxml" />
     <Content Include="Views\Home\Mision.cshtml" />
     <Content Include="Views\Home\Vision.cshtml" />
